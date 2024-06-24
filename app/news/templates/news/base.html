@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VladiNews</title>
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-info">
+                <div><a href="{% url "news:index" %}" class="title">VladiNews</a></div>
+                <a href="{% url "news:info" %}" class="info-link">Інформація</a>
+            </div>
+            <a href="{% url "admin:index" %}" class="admin-link">Адмін панель</a>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>© Андрій Ковальский, 2024, Всі права захищені</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "news/base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "index.css" %}">
+{% endblock css %}
+
+{% block content %}
+{% for new in news %}
+<div class="new">
+    <div class="new-item">
+        {% if new.image %}
+        <img src="{{ new.image.url }}" onerror="this.src = '{% static "image_not_found.png" %}'" alt="Новина" class="new-image">
+        {% endif %}
+        <h2 class="new-title">{{ new.title }}</h2>
+        <p class="new-text">{{ new.text }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
